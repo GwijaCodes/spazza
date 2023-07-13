@@ -2,8 +2,8 @@
     "name": "Spazza",
     "short_name": "Spazza",
     "start_url": ".",
-    "background_color": "#000000",
-    "theme_color": "#7ACE7A",
+    "background_color": "#464F46",
+    "theme_color": "#000000",
     "display": "standalone",
     "icons": [
         {
