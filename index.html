@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="#7ACE7A">
+    <meta name="theme-color">
+    <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="src/app.css">
+    <link rel="apple-touch-logo" href="images/icon-192.png">
+    <title>PWA</title>
+</head>
+
+<body>
+    <div class="background">
+    <img src="images/giallo.jpg" id="background">
+    <div class="gradient"></div>
+</div>
+    <main>
+        
+            <div class="info">
+                <div class="spazza">
+                    <p id="spazzaText"></p>
+                 </div>
+                 <span id="data"></span>
+                 <p id="orario"></p>
+            </div>
+            <div class="calendario">
+                <p class="calendarioCollapsed"><b>Domani:</b> <span id="spazzaDomani">----</span></p>
+                <div class="calendarioFull">
+                    <ul>
+                        <li><b>Domenica:</b> UMIDO</li>
+                        <li><b>Lunedi:</b> SECCO</li>
+                        <li><b>Martedi:</b> UMIDO+VETRO</li>
+                        <li><b>Mercoledi:</b> PLASTICA</li>
+                        <li><b>Giovedi:</b> CARTA</li>
+                        <li><b>Venerdi:</b> UMIDO+METALLO</li>
+                        <li><b>Sabato:</b> RIPOSO</li>
+                    </ul>
+                </div>
+            </div>
+
+    </main>
+    <script src="src/app.js"></script>
+</body>
+
+</html>
