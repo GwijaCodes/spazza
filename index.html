@@ -8,6 +8,7 @@
     <meta name="theme-color">
     <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="./src/master.css">
     <link rel="stylesheet" href="src/app.css">
     <link rel="apple-touch-logo" href="images/icon-192.png">
     <title>PWA</title>
@@ -15,11 +16,17 @@
 
 <body>
     <div class="background">
-    <img src="images/giallo.jpg" id="background">
-    <div class="gradient"></div>
+        <img src="images/giallo.jpg" id="background">
+        <div class="gradient"></div>
+</div>
+<div class="bar">
+    <span>Spazza</span>
+    <div class="btns">
+        <button class="notifications">	&#128276; : ON</button>
+        <button class="moreInfo" href="./src/moreInfo.html"><a href="./src/moreInfo.html">?</a></button>
+    </div>
 </div>
     <main>
-        
             <div class="info">
                 <div class="spazza">
                     <p id="spazzaText"></p>
@@ -28,8 +35,14 @@
                  <p id="orario"></p>
             </div>
             <div class="calendario">
-                <p class="calendarioCollapsed"><b>Domani:</b> <span id="spazzaDomani">----</span></p>
+                <div class="calendarioCollapsed">
+                    <span>
+                    <b>Domani:</b> 
+                    <span id="spazzaDomani">----</span> 
+                    <span class="more">+</span>
+                </div>
                 <div class="calendarioFull">
+                    <span class="less">-</span>
                     <ul>
                         <li><b>Domenica:</b> UMIDO</li>
                         <li><b>Lunedi:</b> SECCO</li>
