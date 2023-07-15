@@ -46,7 +46,10 @@ main{
     padding: 20px;
     line-height: 30px;
     position: relative;
-    top: -30px;
+    top: -60px;
+    padding: 20px 16px;
+    border: 2px solid #fff;
+    border-radius: 50px 0 100px 50px;
 }
 
 .more{
@@ -59,11 +62,12 @@ main{
 .less{
     font-size: 36px;
     position: relative;
-    top: 250px;
-    left: -100px;
+    top: 0px;
+    left: 100px;
     padding: 1px 16px;
-    border: 2px solid #fff;
     border-radius: 50px 0 50px 50px;
+    background-color: #fff;
+    color: #000;
 }
 
 

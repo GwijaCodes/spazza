@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
     <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="moreInfo.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,9 +16,94 @@
     <div class="bar">
         <span><a href="../index.html">Spazza</a></span>
         <div class="btns">
-            <button class="notifications">	&#128276; : ON</button>
-            <button class="moreInfo" href="./src/moreInfo.html"><a href="./src/moreInfo.html">?</a></button>
+            <button class="moreInfo" href="">Guida</button>
         </div>
     </div>
+    <h1>Guida alla differenziata</h1>
+    <p class="intro">Puoi consultare questa pagina per sapere sempre cosa conferire in ogni bidone.</p>
+    <div class="infoContainer">
+        <button class="accordion">UMIDO</button>
+        <div class="panel">
+            <p><li class="good">Sì per scarti di cucina, alimenti scaduti o avariati, fondi di caffè, filtri del tè, bastoncini in legno del gelato, tovaglioli in carta non colorati, sughero, terriccio, cenere del camino, fiori secchi, escrementi di animali domestici, lettiere (se compostabili).</li>  
+                <li class="bad">No a liquidi, imballaggi, gusci dei frutti di mare, piante malate, carta oleata, mozziconi di sigaretta, Tetra Pak.</li> </p>
+        </div>
+
+        <button class="accordion">SECCO</button>
+        <div class="panel">
+            <p>
+                <li class="good">
+                    Sì a giocattoli rotti, pannolini, assorbenti, cotton fioc, spugne sintetiche, polvere, pyrex, porcellana, accendini e mozziconi di sigaretta, carta oleata, scontrini, rifiuti fatti di più materiali, lettiera non compostabile, cd e dvd, lampadine a incandescenza, nastri adesivi, tappeti e cuscini, matite e pennarelli. 
+                </li>
+                <li class="bad">No per carta e cartone, grossi oggetti, imballaggi in plastica e metallo, farmaci, pile, lampadine, indumenti usati, avanzi organici.</li>
+            </p>
+        </div>
+
+        <button class="accordion">VETRO</button>
+        <div class="panel">
+            <p>
+                <li class="good">
+                    Sì per imballaggi e bottiglie in vetro, anche se sporchi o con etichette.
+                </li>
+                <li class="bad">
+                    No a vetri rotti, barattoli ancora pieni di prodotto anche se andato a male, tappi in metallo o plastica, ceramica, pyrex, cristallo.
+                </li>
+                <li class="tip">
+                    Consiglio: risparmia la tua acqua;  non serve sciacquare alla perfezione bottiglie e barattoli prima di buttarli!
+                </li>
+            </p>
+        </div>
+
+        <button class="accordion">PLASTICA</button>
+        <div class="panel">
+            <p><li class="good">
+                Sì a imballaggi come bottiglie, vaschette, flaconi, vasetti, buste e bustine, piatti e bicchieri monouso, blister, reti per frutta e verdura.
+            </li>
+            <li class="bad">
+                No per giocattoli, attrezzi da cucina, penne, posate in plastica, tubi da giardinaggio, accendini, elettrodomestici anche piccoli, bacinelle, cd e dvd, sedie, sottovasi, siringhe, occhiali.
+            </li></p>
+        </div>
+
+        <button class="accordion">CARTA</button>
+        <div class="panel">
+            <p><li class="good">
+                Sì a giornali, riviste, libri e quaderni, moduli, scatole e imballaggi in cartone, Tetra Pak senza parti in plastica, sacchetti in carta.
+            </li>
+            <li class="bad">
+                No per carta unta o sporca di cibo, piatti e bicchieri in carta, scatoloni della pizza, scontrini.
+            </li>
+        <li class="tip">
+            Consiglio: cerca di appiattire e comprimere i rifiuti in carta il più possibile!
+        </li></p>
+        </div>
+
+        <button class="accordion">METALLO</button>
+        <div class="panel">
+            <p><li class="good">
+                Sì a lattine, fogli in alluminio, bombolette spray non infiammabili, scatolette e barattoli per carne e legumi, tubetti, coperchi dello yogurt, tappi e capsule.
+            </li>
+            <li class="bad">
+                No per barattoli con resti di vernice, bombolette contenenti sostanze infiammabili, filtri, qualsiasi contenitore di prodotti irritanti o potenzialmente tossici.
+            </li></p>
+        </div>
+    </div>
+    <script>
+        //accordion 
+let acc = document.getElementsByClassName("accordion");
+let i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+
+    this.classList.toggle("active");
+
+    let panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+} 
+    </script>
 </body>
 </html>

@@ -14,9 +14,13 @@ let data = document.querySelector('#data').innerHTML = `${weekday} ${day} ${mont
 //mostra cosa buttare oggi e domani
 let spazza = raccolta[date.getDay()];
 let spazzaText = document.querySelector('#spazzaText').innerHTML = spazza;
-let domani = document.querySelector('#spazzaDomani').innerHTML = raccolta[date.getDay() + 1];
-if (spazza >= raccolta.length){
+let domani = document.querySelector('#spazzaDomani');
+
+//loop da sabato a domenica
+if (date.getDay() >= raccolta.length - 1){
     domani.innerHTML = raccolta[0];
+} else {
+    domani.innerHTML = raccolta[date.getDay() + 1];
 }
 
 //cambia sfondo
@@ -40,3 +44,4 @@ if("serviceWorker" in navigator){
         console.log(error);
     });
 }
+
