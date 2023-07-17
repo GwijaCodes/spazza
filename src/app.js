@@ -2,7 +2,7 @@
 const settimana = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
 const mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
 const raccolta = ["UMIDO", "SECCO", "UMIDO+VETRO", "PLASTICA", "CARTA", "UMIDO+METALLO", "RIPOSO"]
-const colori = ['images/rosso.jpg', 'images/grigio.jpg', 'images/verde.jpg', 'images/giallo.jpg', 'images/blu.jpg', 'images/verde.jpg', 'images/sabato.jpg'];
+const colori = ['images/rosso.jpg', 'images/grigio.jpeg', 'images/verde.jpg', 'images/giallo.jpg', 'images/blu.jpg', 'images/verde.jpg', 'images/sabato.jpg'];
 
 //mostra data
 let date = new Date();
@@ -30,8 +30,15 @@ let sfondo = document.querySelector('#background').src = colori[date.getDay()];
 let calendarioCollapsed = document.querySelector('.calendarioCollapsed');
 let calendarioFull = document.querySelector('.calendarioFull');
 let calendario = document.querySelector('.calendario').addEventListener('click', (e)=>{
-    calendarioCollapsed.classList.toggle('invisible');
-    calendarioFull.classList.toggle('visible');
+    if(calendarioFull.style.maxHeight){
+        calendarioFull.style.maxHeight = null;
+        calendarioCollapsed.classList.toggle('invisible');
+
+    } else {
+        calendarioFull.style.maxHeight = calendarioFull.scrollHeight + 'px';
+        calendarioCollapsed.classList.toggle('invisible');
+
+    }
 });
 
 //service worker check
@@ -44,4 +51,20 @@ if("serviceWorker" in navigator){
         console.log(error);
     });
 }
+
+
+//Notifiche
+
+const click = document.querySelector('.greetings');
+
+click.addEventListener('click', ()=>{
+    Notification.requestPermission().then(perm =>{
+        if (perm === 'granted'){
+            new Notification("Ayo there", {
+                body: 'yooooo my guy'
+            });
+        }
+    })
+})
+
 

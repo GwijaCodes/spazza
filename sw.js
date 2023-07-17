@@ -3,6 +3,8 @@ self.addEventListener('install', (e)=>{
         caches.open("static").then(cache => {
             return cache.addAll(["./", 
             "./src/app.css", 
+            "./src/master.css",
+            "./moreInfo.css",
             "./images"
         ])
         })
@@ -16,3 +18,4 @@ self.addEventListener("fetch", e=>{
         })
     )
 });
+

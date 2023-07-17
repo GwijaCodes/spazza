@@ -25,23 +25,24 @@ a{
 }
 
 .gradient{
-    height: 100%;
     width: 100vw;
-    background: linear-gradient(#00000028, #000);
-    z-index: -2;
+    height: 100vh;
+    background: linear-gradient(#00000065, #00000090);
+    position: fixed;
+    bottom: 0;
 }
 
 .background img{
-    filter: blur(3px);
+    filter: blur(2px);
     object-fit: cover;
-    position: absolute;
-    height: 80vmax;
+    position: fixed;
     width: 100vw;
+    height: 100vh;
     z-index: -3;
 }
 
 .background{
-    height: 80vmax;
+    height: 100vmax;
     z-index: -1;
     position: absolute;
     top: 0;
@@ -51,6 +52,7 @@ a{
 .bar{
     width: 100%;
     height: 60px;
+    z-index: 100;
     color: #fff;
     padding: 0 8vmin;
     box-shadow: 0px -2px 30px #000000c7;
@@ -59,7 +61,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #4f5a4f;
+    background-color: #1a1d1ace;
 }
 
 .bar .btns{

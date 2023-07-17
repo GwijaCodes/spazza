@@ -1,5 +1,5 @@
 .moreInfo{
-border-bottom: 4px solid #fff !important;
+border-bottom: 4px solid #5da049 !important;
 }
 
 h1{
@@ -46,6 +46,7 @@ h1{
 
 .panel {
     padding: 0 18px;
+    color: #fff;
     background-color: transparent;
     max-height: 0;
     overflow: hidden;
@@ -53,13 +54,13 @@ h1{
   }
 
   .good{
-    background-color: #b2e6b3;
+    background-color: #587559c7;
   }
   .bad{
-    background-color: #e6b2b2;
+    background-color: #784b4bc7;
   }
   .tip{
-    background-color: #b2d0e6;
+    background-color: #243c4ec7;
   }
   .good, .bad, .tip{
     border-radius: 10px;

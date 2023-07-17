@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" content="#7ACE7A">
     <meta name="theme-color">
     <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/romero" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="./src/master.css">
     <link rel="stylesheet" href="src/app.css">
@@ -16,43 +18,44 @@
 
 <body>
     <div class="background">
-        <img src="images/giallo.jpg" id="background">
+        <img src="" id="background">
         <div class="gradient"></div>
 </div>
 <div class="bar">
-    <span>Spazza</span>
+   <img src="images/icon-192.png" width="25px" alt="">
     <div class="btns">
-        <button class="moreInfo" href="./src/moreInfo.html"><a href="./src/moreInfo.html">Guida</a></button>
+        <button class="moreInfo" href="./src/moreInfo.html"><a href="./src/moreInfo.html"><box-icon name='book-reader' color='#ffffff' ></box-icon></a></button>
     </div>
 </div>
-    <main>
-            <div class="info">
-                <div class="spazza">
-                    <p id="spazzaText"></p>
-                 </div>
-                 <span id="data"></span>
-                 <p id="orario"></p>
-            </div>
-            <div class="calendario">
-                <div class="calendarioCollapsed">
-                    <span>
-                    <b>Domani:</b> 
-                    <span id="spazzaDomani">----</span> 
-                    <span class="more">+</span>
+<div class="greetings">
+    <h2>Bentornato su <span style="color: #5da049">Spazza</span></h2>
+    <span id="data"></span>
+</div>
+<main>
+        <div class="info">
+            <div class="spazza">
+                <p id="spazzaText"></p>
                 </div>
-                <div class="calendarioFull">
-                    <span class="less">-</span>
-                    <ul>
-                        <li><b>Domenica:</b> UMIDO</li>
-                        <li><b>Lunedi:</b> SECCO</li>
-                        <li><b>Martedi:</b> UMIDO+VETRO</li>
-                        <li><b>Mercoledi:</b> PLASTICA</li>
-                        <li><b>Giovedi:</b> CARTA</li>
-                        <li><b>Venerdi:</b> UMIDO+METALLO</li>
-                        <li><b>Sabato:</b> RIPOSO</li>
-                    </ul>
-                </div>
+        </div>
+        <div class="calendario">
+            <div class="calendarioCollapsed">
+                <span><b>Domani:</b> 
+                <span id="spazzaDomani">----</span> 
+                <p>Mostra Calendario</p>
             </div>
+            <div class="calendarioFull">
+                <ul>
+                    <li><b>Domenica:</b> UMIDO</li>
+                    <li><b>Lunedi:</b> SECCO</li>
+                    <li><b>Martedi:</b> UMIDO+VETRO</li>
+                    <li><b>Mercoledi:</b> PLASTICA</li>
+                    <li><b>Giovedi:</b> CARTA</li>
+                    <li><b>Venerdi:</b> UMIDO+METALLO</li>
+                    <li><b>Sabato:</b> RIPOSO</li>
+                </ul>
+                <p id="riduci">Riduci</p>
+            </div>
+        </div>
 
     </main>
     
