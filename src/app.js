@@ -54,17 +54,3 @@ if("serviceWorker" in navigator){
 
 
 //Notifiche
-
-const click = document.querySelector('.greetings');
-
-click.addEventListener('click', ()=>{
-    Notification.requestPermission().then(perm =>{
-        if (perm === 'granted'){
-            new Notification("Ayo there", {
-                body: 'yooooo my guy'
-            });
-        }
-    })
-})
-
-

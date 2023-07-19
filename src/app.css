@@ -28,17 +28,17 @@ main{
 
 .info{
     background-color: transparent;
-    border-left: 10px solid #5da049;
     color: #ffffff;
-    padding: 0 40px;
+    width: 90%;
+    border-left: 10px solid #5da049;
 }
 
 .spazza {
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'Romero';
     letter-spacing: 2px;
     max-width: fit-content;
-    text-align: center;
+    margin: auto;
 }
 
 .calendario{

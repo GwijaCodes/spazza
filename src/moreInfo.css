@@ -2,11 +2,8 @@
 border-bottom: 4px solid #5da049 !important;
 }
 
-h1{
-    color: white;
-    margin: 25vmin auto 5vmin;
-    max-width: 80vmin;
-    font-size: 20px;
+body{
+  background-color: #172114;
 }
 
 .intro{
