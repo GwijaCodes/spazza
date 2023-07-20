@@ -32,10 +32,10 @@
     </style>
 
     <script>
-    //Notifiche
-        let notifBtn = document.getElementById('test');
+     let notifBtn = document.getElementById('test');
         notifBtn.addEventListener('click', () => {
             window.Notification.requestPermission().then(perm => {
+                alert(perm);
                 if (perm === 'granted') {
                     new Notification("Testing!")
                 }
