@@ -1,6 +1,7 @@
 {
     "name": "Spazza",
     "short_name": "Spazza",
+    "manifest_version": 3,
     "start_url": ".",
     "background_color": "#000000",
     "theme_color": "#000000",
@@ -16,5 +17,8 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ]
+    ],
+    "permissions": [
+        "notifications",
+        "alarms"]
 }
