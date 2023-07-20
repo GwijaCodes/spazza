@@ -32,12 +32,19 @@
     </style>
 
     <script>
-     let notifBtn = document.getElementById('test');
+    //Notifiche
+        let notifBtn = document.getElementById('test');
+
         notifBtn.addEventListener('click', () => {
-            window.Notification.requestPermission().then(perm => {
-                alert(perm);
-                if (perm === 'granted') {
-                    new Notification("Testing!")
+            Notification.requestPermission().then((result)=>{
+                if (result === 'granted') {
+                    navigator.serviceWorker.ready.then((registration)=>{
+                        registration.showNotification("Vibrate my guy", {
+                            body: "buzz buzz"
+                        })
+                    })
+                } else {
+                    alert(result);
                 }
             })
         });
