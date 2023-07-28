@@ -18,8 +18,7 @@
         </div>
     </div>
     <h1>Impostazioni</h1>
-    
-    <button id="test">Click me for a test</button>
+    <button id="notification">Register</button>
 
     <style>
         body{
@@ -30,24 +29,19 @@
             border-bottom: 4px solid #5da049 !important;
             }
     </style>
-
+    
     <script>
     //Notifiche
-        let notifBtn = document.getElementById('test');
-
-        notifBtn.addEventListener('click', () => {
-            Notification.requestPermission().then((result)=>{
-                if (result === 'granted') {
-                    navigator.serviceWorker.ready.then((registration)=>{
-                        registration.showNotification("Vibrate my guy", {
-                            body: "buzz buzz"
-                        })
-                    })
-                } else {
-                    alert(result);
-                }
-            })
-        });
+       const btn = document.querySelector('#notification');
+       btn.addEventListener('click', () => {
+        Notification.requestPermission(function(result) {
+            if (result === 'granted') {
+                navigator.serviceWorker.ready.then(function(registration) {
+                registration.showNotification('Notification with ServiceWorker');
+                });
+            }
+            });
+       })
     </script>
     <script src="app.js"></script>
 </body>

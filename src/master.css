@@ -91,3 +91,8 @@ h1{
     max-width: 80vmin;
     font-size: 20px;
 }
+
+.calendarioFull{
+    margin: auto;
+    max-width: 90vw;
+}
