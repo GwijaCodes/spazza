@@ -9,7 +9,7 @@ let date = new Date();
 let weekday = settimana[date.getDay()];
 let month = mesi[date.getMonth()];
 let day = date.getDate();
-let data = document.querySelector('#data').innerHTML = `${weekday} ${day} ${month}`
+let oggi = document.querySelector('#oggi').innerHTML = `${weekday} ${day} ${month}`
 
 //mostra cosa buttare oggi e domani
 let spazza = raccolta[date.getDay()];
@@ -41,16 +41,35 @@ let calendario = document.querySelector('.calendario').addEventListener('click',
     }
 });
 
-//service worker check
-if("serviceWorker" in navigator){
-    navigator.serviceWorker.register("sw.js").then(registration => {
-        console.log('SW Registered!');
-        console.log(registration);
-    }).catch(error =>{
-        console.log("SW Registration failed...");
-        console.log(error);
-    });
-}
+
+//snackbar
+let ora = date.getHours();
+const snackbarContainer = document.querySelector('.snackbar-container')
+const snackbar = document.querySelector('.snackbar');
+const snackbarText = document.querySelector('#snackbarText');
+const snackbarButton = document.querySelector('#snackbarButton');
+
+snackbarButton.addEventListener('click', () => {
+    snackbar.style.animation = 'fadeout 0.5s';
+    setTimeout(() => {
+        snackbar.style.visibility = 'hidden';
+    }, 300)
+})
+
+
+    //contenuto snackbar
+if (ora <= 19){
+    snackbarText.innerHTML = 'Ricorda di ritirare il bidone!';
+} /* else {
+    snackbarText.innerHTML = 'Hai portato fuori la spazza?';
+    snackbarButton.innerHTML = 'SI'
+    const negative = snackbarButton.appendChild(document.createElement('button'));
+    negative.innerHTML = 'NO';
+    negative.style.paddingLeft = '20px';
+}*/
+
+    //frequenza snackbar
+
 
 
 

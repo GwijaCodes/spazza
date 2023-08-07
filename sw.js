@@ -7,7 +7,6 @@ self.addEventListener('install', (e)=>{
             "https://fonts.cdnfonts.com/css/roboto",
             "https://unpkg.com/boxicons@2.1.4/dist/boxicons.js",
             "./images",
-            "./",
             "./src/fallback.html",
         ])
         })
@@ -22,6 +21,5 @@ self.addEventListener("fetch", e=>{
         }).catch(() => caches.match('./src/fallback.html'))
     )
 });
-
 
 

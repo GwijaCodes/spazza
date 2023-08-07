@@ -25,12 +25,11 @@
    <img src="images/icon-192.png" width="25px" alt="">
     <div class="btns">
         <button class="moreInfo"><a href="./src/moreInfo.html"><box-icon name='book-reader' color='#ffffff' ></box-icon></a></button>
-        <button class="settings"><a href="./src/settings.html"><box-icon name='cog' color='#ffffff' ></box-icon></a></button>
     </div>
 </div>
 <div class="greetings">
     <h2>Bentornato su <span style="color: #5da049">Spazza</span></h2>
-    <span id="data"></span>
+    <span id="oggi"></span>
 </div>
 <main>
         <div class="info">
@@ -57,10 +56,17 @@
                 <p id="riduci">Riduci</p>
             </div>
         </div>
-
+        <div class="snackbar-container">
+                <div class="snackbar">
+                    <p id="snackbarText">Testo da cambiare!</p>
+                    <button id="snackbarButton">OK</button>
+                </div>
+            </div>
     </main>
+
     
-    <script src="src/app.js"></script>
+
+    <script src="./src/app.js"></script>
 </body>
 
 </html>

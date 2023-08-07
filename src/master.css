@@ -96,3 +96,48 @@ h1{
     margin: auto;
     max-width: 90vw;
 }
+
+.snackbar{
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    padding: 10px 20px;
+    bottom: 30px;
+    width: max-content;
+    max-width: 90vw;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadein 0.5s;
+}
+
+.snackbar button{
+    background-color: transparent;
+    border: none;
+    color: #00b2d6;
+    font-weight: bold;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
