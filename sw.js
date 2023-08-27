@@ -5,7 +5,6 @@ self.addEventListener('install', (e)=>{
             return cache.addAll([
             "https://fonts.cdnfonts.com/css/romero",
             "https://fonts.cdnfonts.com/css/roboto",
-            "https://unpkg.com/boxicons@2.1.4/dist/boxicons.js",
             "./images",
             "./src/fallback.html",
         ])

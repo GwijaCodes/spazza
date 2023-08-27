@@ -20,48 +20,151 @@
     <div class="background">
         <img src="" id="background">
         <div class="gradient"></div>
-</div>
-<div class="bar">
-   <img src="images/icon-192.png" width="25px" alt="">
-    <div class="btns">
-        <button class="moreInfo"><a href="./src/moreInfo.html"><box-icon name='book-reader' color='#ffffff' ></box-icon></a></button>
     </div>
-</div>
-<div class="greetings">
-    <h2>Bentornato su <span style="color: #5da049">Spazza</span></h2>
-    <span id="oggi"></span>
-</div>
-<main>
+    <div class="reminder">
+        <p>Ricorda di ritirare il bidone!</p>
+    </div>
+    <main>
         <div class="info">
             <div class="spazza">
                 <p id="spazzaText"></p>
-                </div>
+            </div>
+            <span id="oggi"></span>
         </div>
         <div class="calendario">
-            <div class="calendarioCollapsed">
-                <span><b>Domani:</b> 
-                <span id="spazzaDomani">----</span> 
-                <p>Mostra Calendario</p>
+            <div class="settimana">
+                <span><b>Domani: 
+                <span id="spazzaDomani">----</span> </b>
+                <div class="tasselli">
+                    <div class="tassello">
+                        <p>Dom</p>
+                        <img class="icon" src="images/fishbone.svg" alt="">
+                    </div>
+                    <div class="tassello" style="background-color: #756E6E;">
+                        <p>Lun</p>
+                        <img class="icon" src="images/garbage.svg" alt="">
+                    </div>
+                    <div class="tassello" style="background: linear-gradient(-45deg,  #2FB90C 45%, #8C6060 45%);">
+                        <p>Mar</p>
+                        <img class="icon smaller top" src="images/fishbone.svg" alt="">
+                        <img class="icon smaller bottom" src="images/jar.svg" alt="">
+                    </div>
+                    <div class="tassello" style="background-color: #D4AE2A;">
+                        <p>Mer</p>
+                        <img class="icon" src="images/bottle.svg" alt="">
+                    </div>
+                    <div class="tassello" style="background-color: #3A6190;">
+                        <p>Gio</p>
+                        <img class="icon" src="images/paperbag.svg" alt="">
+                    </div>
+                    <div class="tassello" style="background: linear-gradient(-45deg, #2FB90C 45%, #8C6060 45%);">
+                        <p>Ven</p>
+                        <img class="icon smaller top" src="images/fishbone.svg" alt="">
+                        <img class="icon smaller bottom" src="images/can.svg" alt="">
+                    </div>
             </div>
-            <div class="calendarioFull">
-                <ul>
-                    <li><b>Domenica:</b> UMIDO</li>
-                    <li><b>Lunedi:</b> SECCO</li>
-                    <li><b>Martedi:</b> UMIDO+VETRO</li>
-                    <li><b>Mercoledi:</b> PLASTICA</li>
-                    <li><b>Giovedi:</b> CARTA</li>
-                    <li><b>Venerdi:</b> UMIDO+METALLO</li>
-                    <li><b>Sabato:</b> RIPOSO</li>
-                </ul>
-                <p id="riduci">Riduci</p>
+            </div>
+            
+            <div class="guida">
+                <p>Cosa conferire?</p>
+                <div class="infoContainer">
+                    <button class="accordion">UMIDO
+                        <img class="btn-icon" src="images/fishbone.svg" alt="">
+                    </button>
+                    <div class="panel">
+                        <p><li class="good">Sì per scarti di cucina, alimenti scaduti o avariati, fondi di caffè, filtri del tè, bastoncini in legno del gelato, tovaglioli in carta non colorati, sughero, terriccio, cenere del camino, fiori secchi, escrementi di animali domestici, lettiere (se compostabili).</li>  
+                            <li class="bad">No a liquidi, imballaggi, gusci dei frutti di mare, piante malate, carta oleata, mozziconi di sigaretta, Tetra Pak.</li> </p>
+                    </div>
+            
+                    <button class="accordion">SECCO
+                        <img class="btn-icon" src="images/garbage.svg" alt="">
+                    </button>
+                    <div class="panel">
+                        <p>
+                            <li class="good">
+                                Sì a giocattoli rotti, pannolini, assorbenti, cotton fioc, spugne sintetiche, polvere, pyrex, porcellana, accendini e mozziconi di sigaretta, carta oleata, scontrini, rifiuti fatti di più materiali, lettiera non compostabile, cd e dvd, lampadine a incandescenza, nastri adesivi, tappeti e cuscini, matite e pennarelli. 
+                            </li>
+                            <li class="bad">No per carta e cartone, grossi oggetti, imballaggi in plastica e metallo, farmaci, pile, lampadine, indumenti usati, avanzi organici.</li>
+                        </p>
+                    </div>
+            
+                    <button class="accordion">VETRO
+                        <img class="btn-icon" src="images/jar.svg" alt="">
+                    </button>
+                    <div class="panel">
+                        <p>
+                            <li class="good">
+                                Sì per imballaggi e bottiglie in vetro, anche se sporchi o con etichette.
+                            </li>
+                            <li class="bad">
+                                No a vetri rotti, barattoli ancora pieni di prodotto anche se andato a male, tappi in metallo o plastica, ceramica, pyrex, cristallo.
+                            </li>
+                            <li class="tip">
+                                Consiglio: risparmia la tua acqua;  non serve sciacquare alla perfezione bottiglie e barattoli prima di buttarli!
+                            </li>
+                        </p>
+                    </div>
+            
+                    <button class="accordion">PLASTICA
+                        <img class="btn-icon" src="images/bottle.svg" alt="">
+                    </button>
+                    <div class="panel">
+                        <p><li class="good">
+                            Sì a imballaggi come bottiglie, vaschette, flaconi, vasetti, buste e bustine, piatti e bicchieri monouso, blister, reti per frutta e verdura.
+                        </li>
+                        <li class="bad">
+                            No per giocattoli, attrezzi da cucina, penne, posate in plastica, tubi da giardinaggio, accendini, elettrodomestici anche piccoli, bacinelle, cd e dvd, sedie, sottovasi, siringhe, occhiali.
+                        </li></p>
+                    </div>
+            
+                    <button class="accordion">CARTA
+                        <img class="btn-icon" src="images/paperbag.svg" alt="">
+                    </button>
+                    <div class="panel">
+                        <p><li class="good">
+                            Sì a giornali, riviste, libri e quaderni, moduli, scatole e imballaggi in cartone, Tetra Pak senza parti in plastica, sacchetti in carta.
+                        </li>
+                        <li class="bad">
+                            No per carta unta o sporca di cibo, piatti e bicchieri in carta, scatoloni della pizza, scontrini.
+                        </li>
+                    <li class="tip">
+                        Consiglio: cerca di appiattire e comprimere i rifiuti in carta il più possibile!
+                    </li></p>
+                    </div>
+            
+                    <button class="accordion">METALLO
+                        <img class="btn-icon" src="images/can.svg" alt="">
+                    </button>
+                    <div class="panel">
+                        <p><li class="good">
+                            Sì a lattine, fogli in alluminio, bombolette spray non infiammabili, scatolette e barattoli per carne e legumi, tubetti, coperchi dello yogurt, tappi e capsule.
+                        </li>
+                        <li class="bad">
+                            No per barattoli con resti di vernice, bombolette contenenti sostanze infiammabili, filtri, qualsiasi contenitore di prodotti irritanti o potenzialmente tossici.
+                        </li></p>
+                    </div>
+                </div>
+                <script>
+                    //accordion 
+            let acc = document.getElementsByClassName("accordion");
+            let i;
+            
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+            
+                this.classList.toggle("active");
+            
+                let panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+              });
+            } 
+                </script>
             </div>
         </div>
-        <div class="snackbar-container">
-                <div class="snackbar">
-                    <p id="snackbarText">Testo da cambiare!</p>
-                    <button id="snackbarButton">OK</button>
-                </div>
-            </div>
     </main>
 
     
