@@ -1,7 +1,7 @@
 //dati array
 const settimana = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
 const mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-const raccolta = ["UMIDO", "SECCO", "UMIDO+VETRO", "PLASTICA", "CARTA", "UMIDO+METALLO", "RIPOSO"]
+const raccolta = ["UMIDO", "SECCO", "UMIDO + VETRO", "PLASTICA", "CARTA", "UMIDO + METALLO", "RIPOSO"]
 const colori = ['images/rosso.jpg', 'images/grigio.jpeg', 'images/verde.jpg', 'images/giallo.jpg', 'images/blu.jpg', 'images/verde.jpg', 'images/sabato.jpg'];
 
 //mostra data
