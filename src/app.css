@@ -120,6 +120,7 @@ main{
         display: flex;
         justify-content: center;
         gap: 4px;
+        margin: auto;
         margin-top: 11px;
         border-top: 2px solid #5da049;
         padding-top: 22px;
