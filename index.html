@@ -6,78 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" content="#7ACE7A">
     <meta name="theme-color">
-    <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/romero" rel="stylesheet">
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="./src/master.css">
     <link rel="stylesheet" href="src/app.css">
+    <link rel="stylesheet" href="./src/master.css">
     <link rel="apple-touch-logo" href="images/icon-192.png">
     <title>PWA</title>
 </head>
 
 <body>
-    <div class="background">
-        <img src="" id="background">
-        <div class="gradient"></div>
-    </div>
-    <div class="reminder">
-        <p>Ricorda di ritirare il bidone!</p>
+    <div class="trashbin">
+        <img src="images/bin.png" alt="">
     </div>
     <main>
         <div class="info">
-            <div class="spazza">
-                <p id="spazzaText"></p>
-            </div>
+            <b><p id="spazzaText"></p></b>
             <span id="oggi"></span>
         </div>
         <div class="calendario">
-            <div class="settimana">
-                <span><b>Domani: 
-                <span id="spazzaDomani">----</span> </b>
-                <div class="tasselli">
-                    <div class="tassello">
-                        <p>Dom</p>
-                        <img class="icon" src="images/fishbone.svg" alt="">
-                    </div>
-                    <div class="tassello" style="background-color: #756E6E;">
-                        <p>Lun</p>
-                        <img class="icon" src="images/garbage.svg" alt="">
-                    </div>
-                    <div class="tassello" style="background: linear-gradient(-45deg,  #2FB90C 45%, #8C6060 45%);">
-                        <p>Mar</p>
-                        <img class="icon smaller top" src="images/fishbone.svg" alt="">
-                        <img class="icon smaller bottom" src="images/jar.svg" alt="">
-                    </div>
-                    <div class="tassello" style="background-color: #D4AE2A;">
-                        <p>Mer</p>
-                        <img class="icon" src="images/bottle.svg" alt="">
-                    </div>
-                    <div class="tassello" style="background-color: #3A6190;">
-                        <p>Gio</p>
-                        <img class="icon" src="images/paperbag.svg" alt="">
-                    </div>
-                    <div class="tassello" style="background: linear-gradient(-45deg, #2FB90C 45%, #8C6060 45%);">
-                        <p>Ven</p>
-                        <img class="icon smaller top" src="images/fishbone.svg" alt="">
-                        <img class="icon smaller bottom" src="images/can.svg" alt="">
-                    </div>
+            <div class="domani concave">
+                <span>Domani: <br>
+                    <b><span id="spazzaDomani"> UMIDO</span></b>  
             </div>
-            </div>
-            
-            <div class="guida">
-                <p>Cosa conferire?</p>
+            <div class="guida convex">
                 <div class="infoContainer">
-                    <button class="accordion">UMIDO
-                        <img class="btn-icon" src="images/fishbone.svg" alt="">
+                    <button class="accordion">Domenica: <b>Umido</b>
                     </button>
                     <div class="panel">
                         <p><li class="good">Sì per scarti di cucina, alimenti scaduti o avariati, fondi di caffè, filtri del tè, bastoncini in legno del gelato, tovaglioli in carta non colorati, sughero, terriccio, cenere del camino, fiori secchi, escrementi di animali domestici, lettiere (se compostabili).</li>  
                             <li class="bad">No a liquidi, imballaggi, gusci dei frutti di mare, piante malate, carta oleata, mozziconi di sigaretta, Tetra Pak.</li> </p>
                     </div>
             
-                    <button class="accordion">SECCO
-                        <img class="btn-icon" src="images/garbage.svg" alt="">
+                    <button class="accordion">Lunedi: <b>Indifferenziata</b>
                     </button>
                     <div class="panel">
                         <p>
@@ -88,8 +50,7 @@
                         </p>
                     </div>
             
-                    <button class="accordion">VETRO
-                        <img class="btn-icon" src="images/jar.svg" alt="">
+                    <button class="accordion">Martedi: <b>Umido, Vetro</b>
                     </button>
                     <div class="panel">
                         <p>
@@ -105,8 +66,7 @@
                         </p>
                     </div>
             
-                    <button class="accordion">PLASTICA
-                        <img class="btn-icon" src="images/bottle.svg" alt="">
+                    <button class="accordion">Mercoledi: <b>Plastica</b>
                     </button>
                     <div class="panel">
                         <p><li class="good">
@@ -117,8 +77,7 @@
                         </li></p>
                     </div>
             
-                    <button class="accordion">CARTA
-                        <img class="btn-icon" src="images/paperbag.svg" alt="">
+                    <button class="accordion">Giovedi: <b>Carta</b>
                     </button>
                     <div class="panel">
                         <p><li class="good">
@@ -132,8 +91,7 @@
                     </li></p>
                     </div>
             
-                    <button class="accordion">METALLO
-                        <img class="btn-icon" src="images/can.svg" alt="">
+                    <button class="accordion">Venerdi: <b>Umido, Metallo</b>
                     </button>
                     <div class="panel">
                         <p><li class="good">
