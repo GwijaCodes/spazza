@@ -21,14 +21,11 @@
   transition: max-height 0.2s ease-out;
 }
 
-.accordion:nth-child(11){
-  border: none;
-}
-
 .good, .bad, .tip{
   border-radius: 10px;
   padding: 10px;
   margin: 10px 0;
+  font-weight: 300;
 }
 
 .trashbin {
