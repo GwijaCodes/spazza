@@ -14,25 +14,31 @@
 }
 
 .panel {
-  padding: 0 18px;
   background-color: transparent;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
 
+.panel li{
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.accordion:nth-child(11){
+  border: none;
+}
+
 .good, .bad, .tip{
   border-radius: 10px;
   padding: 10px;
   margin: 10px 0;
-  font-weight: 300;
 }
 
 .trashbin {
   position: absolute;
   top: 5vh;
   right: 0;
-  z-index: -100;
   height: 400px;
   width: 50vw;
   overflow: hidden;
