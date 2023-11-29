@@ -1,6 +1,6 @@
 .accordion {
   background-color: transparent;
-  padding: 18px 0;
+  padding: 4px 0;
   width: 100%;
   border: none;
   outline: none;
@@ -34,29 +34,18 @@
 
 .panel li{
   font-weight: 300;
-  font-size: 16px;
-}
-
-.accordion:nth-child(11){
-  border: none;
+  font-size: 14px;
 }
 
 .good, .bad, .tip{
   border-radius: 10px;
   padding: 10px;
-  margin: 10px 0;
 }
 
 .trashbin {
-  position: absolute;
-  top: 5vh;
-  right: 0;
-  height: 400px;
-  width: 50vw;
-  overflow: hidden;
-}
-
-.trashbin img{
-  height: 80%;
-  transform: rotate(-10deg);
+  width: 195px;
+  height: 195px;
+  margin-bottom: 10px;
+  background-image: url('../images/trashbins.png');
+  background-size: cover;
 }

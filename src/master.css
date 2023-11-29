@@ -15,9 +15,11 @@ body{
     font-weight: medium;
     background-color: var(--light);
     min-height: 100vh;
-    display: grid;
-    place-items: center;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10vh;
 }
 
 main{
@@ -25,9 +27,8 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 140px;
-    margin-top: 150px;
     margin-bottom: 60px;
+    gap: 40px;
 }
 
 .visible{
@@ -50,17 +51,15 @@ main{
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    font-size: 20px;
 }
 
 #spazzaText{
-    padding-left: 20px;
-    font-size: 2em;
-    width: min-content;
+    font-size: 32px;
 }
 
 #spazzaDomani {
-    font-size: 1.5em;
     font-weight: 500;
 }
 
@@ -73,7 +72,7 @@ main{
 .calendario{
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    gap: 20px;
 }
 
 .infoContainer{
@@ -85,7 +84,7 @@ main{
 }
 
 p, button, span {
-    font-size: 1em;
+    font-size: 16px;
     font-weight: 300;
 }
 
