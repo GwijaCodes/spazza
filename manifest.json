@@ -2,14 +2,18 @@
     "name": "Spazza",
     "short_name": "Spazza",
     "manifest_version": 3,
-    "start_url": ".",
+    "start_url": "https://gwijacodes.github.io/myspazza/",
     "background_color": "#000000",
-    "theme_color": "#E8E8E8",
     "display": "standalone",
     "orientation": "portrait",
     "icons": [
         {
             "src": "images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icon-20.png",
             "sizes": "20x20",
             "type": "image/png"
         }

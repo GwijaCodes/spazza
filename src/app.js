@@ -48,6 +48,7 @@ window.addEventListener('load', () => {
 
 
 document.querySelector('body').addEventListener('click', () => {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', 'var(--light)');
 
     checkBins()
 
