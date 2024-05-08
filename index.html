@@ -8,136 +8,664 @@
     <meta name="theme-color">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/69c826159c.js" crossorigin="anonymous"></script>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="src/app.css">
-    <link rel="stylesheet" href="./src/master.css">
-    <link rel="apple-touch-logo" href="images/icon-192.png">
+    <link rel="apple-touch-logo" href="./images/icon-192.png">
+    <link rel="shortcut icon" href="./images/icon-192.png" type="image/x-icon">
     <title>SPAZZA</title>
 </head>
 
 <body>
-    <div class="trashbin"></div>
-    <main>
-        <div class="info">
-            <h1 id="spazzaText"></h1>
-            <span id="oggi"></span>
-        </div>
-        <div class="calendario">
-            <div class="domani concave">
-                <span>Domani:
-                    <b><span id="spazzaDomani"> UMIDO</span></b>  
-            </div>
-            <div class="guida convex">
-                <div class="infoContainer">
-                    <button class="accordion">
-                        <span>Domenica: <b>Umido</b></span>
-                         <span class="more">+</span>
-                    </button>
-                    <div class="panel">
-                        <p><li class="good">Sì per scarti di cucina, alimenti scaduti o avariati, fondi di caffè, filtri del tè, bastoncini in legno del gelato, tovaglioli in carta non colorati, sughero, terriccio, cenere del camino, fiori secchi, escrementi di animali domestici, lettiere (se compostabili).</li>  
-                            <li class="bad">No a liquidi, imballaggi, gusci dei frutti di mare, piante malate, carta oleata, mozziconi di sigaretta, Tetra Pak.</li> </p>
-                    </div>
-            
-                    <button class="accordion">
-                        <span>Lunedì: <b>Secco</b></span>
-                        <span class="more">+</span>
-                    </button>
-                    <div class="panel">
-                        <p>
-                            <li class="good">
-                                Sì a giocattoli rotti, pannolini, assorbenti, cotton fioc, spugne sintetiche, polvere, pyrex, porcellana, accendini e mozziconi di sigaretta, carta oleata, scontrini, rifiuti fatti di più materiali, lettiera non compostabile, cd e dvd, lampadine a incandescenza, nastri adesivi, tappeti e cuscini, matite e pennarelli. 
-                            </li>
-                            <li class="bad">No per carta e cartone, grossi oggetti, imballaggi in plastica e metallo, farmaci, pile, lampadine, indumenti usati, avanzi organici.</li>
-                        </p>
-                    </div>
-            
-                    <button class="accordion">
-                        <span>Martedì: <b>Umido, Vetro</b></span>
-                        <span class="more">+</span>
-                    </button>
-                    <div class="panel">
-                        <p>
-                            <li class="good">
-                                Sì per imballaggi e bottiglie in vetro, anche se sporchi o con etichette.
-                            </li>
-                            <li class="bad">
-                                No a vetri rotti, barattoli ancora pieni di prodotto anche se andato a male, tappi in metallo o plastica, ceramica, pyrex, cristallo.
-                            </li>
-                            <li class="tip">
-                                Consiglio: risparmia la tua acqua;  non serve sciacquare alla perfezione bottiglie e barattoli prima di buttarli!
-                            </li>
-                        </p>
-                    </div>
-            
-                    <button class="accordion">
-                        <span>Mercoledì: <b>Plastica</b></span>
-                        <span class="more">+</span>
-                    </button>
-                    <div class="panel">
-                        <p><li class="good">
-                            Sì a imballaggi come bottiglie, vaschette, flaconi, vasetti, buste e bustine, piatti e bicchieri monouso, blister, reti per frutta e verdura.
-                        </li>
-                        <li class="bad">
-                            No per giocattoli, attrezzi da cucina, penne, posate in plastica, tubi da giardinaggio, accendini, elettrodomestici anche piccoli, bacinelle, cd e dvd, sedie, sottovasi, siringhe, occhiali.
-                        </li></p>
-                    </div>
-            
-                    <button class="accordion">
-                        <span>Giovedì: <b>Carta</b></span>
-                        <span class="more">+</span>
-                    </button>
-                    <div class="panel">
-                        <p><li class="good">
-                            Sì a giornali, riviste, libri e quaderni, moduli, scatole e imballaggi in cartone, Tetra Pak senza parti in plastica, sacchetti in carta.
-                        </li>
-                        <li class="bad">
-                            No per carta unta o sporca di cibo, piatti e bicchieri in carta, scatoloni della pizza, scontrini.
-                        </li>
-                    <li class="tip">
-                        Consiglio: cerca di appiattire e comprimere i rifiuti in carta il più possibile!
-                    </li></p>
-                    </div>
-            
-                    <button class="accordion">
-                        <span>Venerdì: <b>Umido, Metallo</b></span>
-                        <span class="more">+</span>
-                    </button>
-                    <div class="panel">
-                        <p><li class="good">
-                            Sì a lattine, fogli in alluminio, bombolette spray non infiammabili, scatolette e barattoli per carne e legumi, tubetti, coperchi dello yogurt, tappi e capsule.
-                        </li>
-                        <li class="bad">
-                            No per barattoli con resti di vernice, bombolette contenenti sostanze infiammabili, filtri, qualsiasi contenitore di prodotti irritanti o potenzialmente tossici.
-                        </li></p>
-                    </div>
+    <div class="bar">
+        <div class="toggle-dark" onclick="darkMode()">
+            <div class="dark-switch concave">
+                <div class="dark-switch-toggle convex">
+                    <i class="fa-regular fa-sun"></i>
+                    <i class="fa-regular fa-moon"></i>
                 </div>
-                <script>
-                    //accordion 
-            let acc = document.getElementsByClassName("accordion");
-            let i;
-            
-            for (i = 0; i < acc.length; i++) {
-              acc[i].addEventListener("click", function() {
-            
-                this.classList.toggle("active");
-            
-                let panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                  panel.style.maxHeight = null;
-                } else {
-                  panel.style.maxHeight = panel.scrollHeight + "px";
-                } 
-              });
-            } 
-                </script>
             </div>
         </div>
-    </main>
 
-    
+        <div class="search-btn convex button" onclick="displaySearchPanel()">
+            <i class="fa-solid fa-magnifying-glass search-btn"></i>
+        </div>
+    </div>
+    <div class="display">
+        <div class="trashbin"></div>
+        <div class="info">
+            <h1 class="title" id="today">Spazza</h1>
+            <p class="sm-thin" id="oggi"></p>
+        </div>
+    </div>
+    <div class="tomorrow">
+        <div class="domani flat container">
+            <p class="sm-bold">Domani:</p>
+            <p class="sm-thin" id="tomorrow">...</p>
+        </div>
+    </div>
+    <div class="list flat">
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Domenica: <span class="sm-thin" id="dom">Umido</span></p>
+
+            <div class="domEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`domEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <h2 class="title">Modifica</h2>
+                </div>
+                <div class="edit-panel-content">
+                    <p class="sm-thin">Domenica:</p>
+
+                    <div name="trashes" id="domTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido" checked>
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">
+                        Fatto
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </div>
+        </label>
+
+        <label class="list-item" for="trashes">
+
+            <p class="item-info sm-bold">Lunedi: <span class="sm-thin" id="lun">Indifferenziata</span></p>
+            <div class="lunEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`lunEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <h2 class="title">Modifica</h2>
+                </div>
+
+                <div class="edit-panel-content">
+                    <p class="sm-thin">Lunedi:</p>
+
+                    <div name="trashes" id="lunTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido">
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata" checked>
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">
+                        Fatto
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Martedi: <span class="sm-thin" id="mar">Umido, Vetro</span></p>
+            <div class="marEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`marEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <h2 class="title">Modifica</h2>
+                </div>
+
+                <div class="edit-panel-content">
+                    <p class="sm-thin">Martedi:</p>
+
+                    <div name="trashes" id="marTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro" checked>
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido" checked>
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">
+                        Fatto
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Mercoledi: <span class="sm-thin" id="mer">Plastica</span></p>
+            <div class="merEditPanel edit-panel invisible">
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`merEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <h2 class="title">Modifica</h2>
+                </div>
+
+                <div class="edit-panel-content">
+                    <p class="sm-thin">Mercoledi:</p>
+
+                    <div name="trashes" id="merTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido">
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica" checked>
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">
+                        Fatto
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Giovedi: <span class="sm-thin" id="gio">Carta</span></p>
+            <div class="gioEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`gioEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <h2 class="title">Modifica</h2>
+                </div>
+
+                <div class="edit-panel-content">
+                    <p class="sm-thin">Giovedi:</p>
+
+                    <div name="trashes" id="gioTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido">
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta" checked>
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">
+                        Fatto
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Venerdi: <span class="sm-thin" id="ven">Umido, Metallo</span></p>
+            <div class="venEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`venEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <h2 class="title">Modifica</h2>
+                </div>
+
+                <div class="edit-panel-content">
+                    <p class="sm-thin">Venerdi:</p>
+
+                    <div name="trashes" id="venTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido" checked>
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo" checked>
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero">
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">
+                        Fatto
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </div>
+        </label>
+
+        <label class="list-item" for="trashes">
+            <p class="item-info sm-bold">Sabato: <span class="sm-thin" id="sab">Libero</span></p>
+            <div class="sabEditPanel edit-panel invisible">
+
+                <div class="bar">
+                    <div class="button convex back" onclick="hidePanel(`sabEditPanel`)">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <h2 class="title">Modifica</h2>
+                </div>
+
+                <div class="edit-panel-content">
+                    <p class="sm-thin">Sabato:</p>
+
+                    <div name="trashes" id="sabTrashes" class="trashes">
+                        <label>
+                            <input type="checkbox" value="Vetro">
+                            <span class="sm-bold">Vetro</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Umido">
+                            <span class="sm-bold">Umido</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Plastica">
+                            <span class="sm-bold">Plastica</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Metallo">
+                            <span class="sm-bold">Metallo</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Indifferenziata">
+                            <span class="sm-bold">Indifferenziata</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Carta">
+                            <span class="sm-bold">Carta</span>
+                        </label> <br>
+                        <label>
+                            <input type="checkbox" value="Libero" checked>
+                            <span class="sm-bold">Libero</span>
+                        </label> <br>
+                    </div>
+
+                    <div class="submit button convex done" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">
+                        Fatto
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="submit button convex" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </div>
+        </label>
+    </div>
+    </div>
+
+
+
+    <div class="search-panel invisible">
+        <div class="bar">
+            <div class="button convex back" onclick="hidePanel(`search-panel`)">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+
+            <h2 class="title">Cerca rifiuti</h2>
+        </div>
+
+        <div class="search-content">
+
+
+            <input type="search" id="searchInput" placeholder="Cerca un rifiuto..." class="concave">
+            <p class="mysearch sm-thin"></p>
+            <div class="liste">
+
+                <div id="lista-umido" class="infoList convex container" onclick="showInfo('lista-umido')">
+                    <h4 class="sm-thin">Umido</h4>
+                    <span class="invisible-text">
+                        Sscarti e avanzi di cucina (sia cotti che crudi, purché freddi); bucce e resti di frutta; scarti
+                        di verdura; gusci di frutta secca; avanzi di carne e ossi; avanzi di pesce e lische; resti di
+                        cibo secco degli animali domestici; gusci di uova; filtri di tè, camomilla, tisane e fondi di
+                        caffè; piccole quantità di fiori recisi; tovaglioli bianchi (non colorati) sporchi di alimenti.
+                    </span>
+                </div>
+
+                <div id="lista-indifferenziata" class="infoList convex container"
+                    onclick="showInfo('lista-indifferenziata')">
+                    <h4 class="sm-thin">Indifferenziata</h4>
+                    <span class="invisible-text">
+                        Giocattoli rotti, pannolini, assorbenti, cotton fioc, spugne sintetiche, polvere, pyrex,
+                        porcellana, accendini e mozziconi di sigaretta, carta oleata, scontrini, rifiuti fatti di più
+                        materiali, lettiera non compostabile, cd e dvd, lampadine a incandescenza, nastri adesivi,
+                        tappeti e cuscini, matite e pennarelli.
+                    </span>
+                </div>
+
+                <div id="lista-vetro" class="infoList convex container" onclick="showInfo('lista-vetro')">
+                    <h4 class="sm-thin">Vetro</h4>
+                    <span class="invisible-text">
+                        Imballaggi e bottiglie in vetro, anche se sporchi o con etichette.
+                    </span>
+                </div>
+
+                <div id="lista-plastica" class="infoList convex container" onclick="showInfo('lista-plastica')">
+                    <h4 class="sm-thin">Plastica</h4>
+                    <span class="invisible-text">
+                        Imballaggi come bottiglie, vaschette, flaconi, vasetti, buste e bustine, piatti e bicchieri
+                        monouso, blister, reti per frutta e verdura.
+                    </span>
+                </div>
+
+                <div id="lista-carta" class="infoList convex container" onclick="showInfo('lista-carta')">
+                    <h4 class="sm-thin">Carta</h4>
+                    <span class="invisible-text">
+                        Giornali, riviste, libri e quaderni, moduli, scatole e imballaggi in cartone, Tetra Pak senza
+                        parti in plastica, sacchetti in carta.
+                    </span>
+                </div>
+
+                <div id="lista-metallo" class="infoList convex container" onclick="showInfo('lista-metallo')">
+                    <h4 class="sm-thin">Metallo</h4>
+                    <span class="invisible-text">
+                        Lattine, fogli in alluminio, bombolette spray non infiammabili, scatolette e barattoli per carne
+                        e legumi, tubetti, coperchi dello yogurt, tappi e capsule.
+                    </span>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <div class="loading">
+        <h1 class="title">Spazza &#x267D;</h1>
+
+    </div>
+
 
     <script src="./src/app.js"></script>
+
+
+    <script type="text/javascript">
+
+        function checkBins() {
+            const trashCount = raccolta[dayN].split(',');
+            trashCount.push('Libero')
+            const bin = document.createElement('img');
+            bin.classList.add('tmp');
+            trashbin.textContent = '';
+
+            for (let count of trashCount) {
+                // console.log(count.toLowerCase())
+                trashbin.appendChild(bin.cloneNode(true))
+                bin.src = 'images/' + count.toLowerCase() + '.png';
+            }
+
+            const bins = document.querySelectorAll('.tmp')
+            trashbin.removeChild(bins[0])
+
+
+            today = document.querySelector('#today').innerText = raccolta[dayN].split(',').join(', ');
+            if (dayN >= raccolta.length - 1) {
+                domani.innerHTML = raccolta[0];
+            } else {
+                domani.innerHTML = raccolta[dayN + 1];
+            }
+        }
+
+
+        function showInfo(thisList) {
+            document.querySelector('#' + thisList + ' span').classList.toggle('invisible-text');
+            document.querySelector('#' + thisList).classList.toggle('open');
+        }
+
+        //RICERCA RIFIUTI
+        const searchInput = document.getElementById('searchInput');
+        const items = document.querySelectorAll('.infoList span');
+        const mysearch = document.querySelector('.mysearch');
+        const searchResult = document.querySelector('.search-result');
+
+        searchInput.addEventListener('input', function () {
+            const searchValue = searchInput.value.toLowerCase();
+            searchValue != '' ? mysearch.innerText = searchInput.value + ' va in...' : mysearch.innerText = ''
+
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                const itemName = item.textContent.toLowerCase();
+                if (itemName.includes(searchValue)) {
+                    item.parentElement.classList.remove('invisible-text');
+                } else {
+                    item.parentElement.classList.add('invisible-text');
+                }
+            }
+        });
+
+
+
+        //select without the need to hold down ctrl
+        window.onmousedown = function (e) {
+
+            var el = e.target;
+            if (el.tagName.toLowerCase() == 'option') {
+                e.preventDefault();
+
+                if (el.hasAttribute('selected')) el.removeAttribute('selected');
+                else el.setAttribute('selected', '');
+
+                var select = el.parentNode.cloneNode(true);
+                el.parentNode.parentNode.replaceChild(select, el.parentNode);
+            }
+        }
+
+
+        function displayTrash(dayName, dayTrashes, dayEditPanel) {
+
+
+            //animate panel
+            document.querySelector('.' + dayEditPanel).classList.toggle('invisible');
+            document.querySelector('.' + dayEditPanel).classList.toggle('visible');
+
+
+            //get checked values
+            let selectedValues = [];
+            document.querySelectorAll("#" + dayTrashes + " input[type='checkbox']").forEach((item) => {
+                if (item.checked === true) {
+                    selectedValues.push(item.value)
+                }
+
+            })
+
+
+            //save checked
+            document.querySelector("#" + dayName).innerText = selectedValues;
+            raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
+            spazza = raccolta[dayN];
+            localStorage.setItem("raccolta", JSON.stringify(raccolta));
+        }
+
+        function hidePanel(thisPanel) {
+            document.querySelector('.' + thisPanel).classList.add('invisible')
+            document.querySelector('.' + thisPanel).classList.remove('visible')
+
+        }
+
+        function displaySearchPanel() {
+            document.querySelector('.search-panel').classList.toggle('invisible');
+            document.querySelector('.search-panel').classList.toggle('visible');
+        }
+
+
+        //div to style checkboxes
+        const customBoxes = document.createElement('span');
+        customBoxes.classList.add('customBoxes', 'concave');
+        const allBoxes = document.querySelectorAll('.trashes label');
+        for (let i = 0; i < allBoxes.length; i++) {
+            allBoxes[i].appendChild(customBoxes.cloneNode(true));
+            if (allBoxes[i].checked === true) {
+                customBoxes.style.background = '#000'
+            }
+        }
+
+
+
+    </script>
+
+
+
 </body>
 
 </html>

@@ -1,56 +1,70 @@
-//dati array
-const settimana = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
-const mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-const raccolta = ["Umido", "Secco", "Umido e Vetro", "Plastica", "Carta", "Umido e Metallo", "Buon Sabato"]
-const colori = ['images/rosso.jpg', 'images/grigio.jpeg', 'images/verde.jpg', 'images/giallo.jpg', 'images/blu.jpg', 'images/verde.jpg', 'images/sabato.jpg'];
-
 //mostra data
+
 let date = new Date();
 let dayN = date.getDay();
+//mese e settimana in italiano
+const settimana = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
+const mesi = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
 let weekday = settimana[dayN];
 let month = mesi[date.getMonth()];
+//data di oggi in italiano
 let day = date.getDate();
 let oggi = document.querySelector('#oggi').innerHTML = `${weekday} ${day} ${month}`
+let domani = document.querySelector('#tomorrow');
+
+
+
 
 //mostra cosa buttare oggi e domani
-let spazza = raccolta[dayN];
-let spazzaText = document.querySelector('#spazzaText').innerHTML = spazza;
-let domani = document.querySelector('#spazzaDomani');
-//trashbin
+
+let myDays = document.querySelectorAll('label p span');
+let raccolta = [...myDays].map(el => el.textContent);
+let today;
 const trashbin = document.querySelector('.trashbin');
-trashbin.style.backgroundPositionX = 1365 - (195 * dayN) + 'px';
 
-console.log(trashbin.style.backgroundPositionX)
+window.addEventListener('load', () => {
+    document.querySelector('.loading').style.opacity = '0'
+    document.querySelector('.loading').style.transform = 'translateX(150%)'
+    console.log('ready')
 
-//loop da sabato a domenica
-if (dayN >= raccolta.length - 1){
-    domani.innerHTML = raccolta[0];
-} else {
-    domani.innerHTML = raccolta[dayN + 1];
-}
+    if (JSON.parse(localStorage.getItem('isDarkMode')) === true) {
+        document.querySelector('body').classList.add('active');
+    }
 
-//calendario espandibile
-let calendarioCollapsed = document.querySelector('.calendarioCollapsed');
-let calendarioFull = document.querySelector('.calendarioFull');
-let calendario = document.querySelector('.calendario').addEventListener('click', (e)=>{
-    if(calendarioFull.style.maxHeight){
-        calendarioFull.style.maxHeight = null;
-        calendarioCollapsed.classList.toggle('invisible');
-
+    if (localStorage.getItem('raccolta') === null) {
+        raccolta = [...document.querySelectorAll('label p span')].map(el => el.textContent)
     } else {
-        calendarioFull.style.maxHeight = calendarioFull.scrollHeight + 'px';
-        calendarioCollapsed.classList.toggle('invisible');
-
+        raccolta = JSON.parse(localStorage.getItem('raccolta'));
+        for (let i = 0; i < myDays.length; i++) {
+            myDays[i].textContent = raccolta[i];
+        }
     }
-});
+    checkBins()
 
-//sw
-window.addEventListener("load", () => {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("../sw.js");
-    }
-  });
 
+
+})
+
+
+
+document.querySelector('body').addEventListener('click', () => {
+
+    checkBins()
+
+})
+
+
+
+
+//dark mode
+let isDarkMode = false;
+
+function darkMode() {
+    isDarkMode = !isDarkMode;
+
+    isDarkMode ? document.querySelector('body').classList.add('active') : document.querySelector('body').classList.remove('active');
+    localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode))
+}
 
 
 
