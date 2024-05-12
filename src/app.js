@@ -41,8 +41,6 @@ window.addEventListener('load', () => {
     }
     checkBins()
 
-
-
 })
 
 
