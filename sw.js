@@ -5,15 +5,15 @@
 //   'index.html',
 //   'src/app.css',
 //   'src/app.js',
-//   'images/carta.png',
-//   'images/icon-20.png',
-//   'images/icon-192.png',
-//   'images/indifferenziata.png',
-//   'images/libero.png',
-//   'images/metallo.png',
-//   'images/plastica.png',
-//   'images/umido.png',
-//   'images/vetro.png'
+//   'images/carta.webp',
+//   'images/icon-20.webp',
+//   'images/icon-192.webp',
+//   'images/indifferenziata.webp',
+//   'images/libero.webp',
+//   'images/metallo.webp',
+//   'images/plastica.webp',
+//   'images/umido.webp',
+//   'images/vetro.webp'
 // ]
 
 // self.addEventListener('install', (e) => {
@@ -35,18 +35,23 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     addResourcesToCache([
       './',
-  './index.html',
-  './src/app.css',
-  './src/app.js',
-  './images/carta.png',
-  './images/icon-20.png',
-  './images/icon-192.png',
-  './images/indifferenziata.png',
-  './images/libero.png',
-  './images/metallo.png',
-  './images/plastica.png',
-  './images/umido.png',
-  './images/vetro.png'
+      './index.html',
+      './src/app.css',
+      './src/app.js',
+      './images/carta.webp',
+      './images/icon-20.png',
+      './images/icon-192.png',
+      './images/indifferenziata.webp',
+      './images/libero.webp',
+      './images/metallo.webp',
+      './images/plastica.webp',
+      './images/umido.webp',
+      './images/vetro.webp',
+      './images/sun.svg',
+      './images/moon.svg',
+      './images/search.svg',
+      './images/edit.svg',
+      './images/back.svg',
     ]),
   );
 });

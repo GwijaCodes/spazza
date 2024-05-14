@@ -10,12 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <script src="https://kit.fontawesome.com/69c826159c.js" crossorigin="anonymous"></script>
+        rel="stylesheet" rel="preload" as="style">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="src/app.css">
     <link rel="apple-touch-logo" href="./images/icon-192.png">
     <link rel="shortcut icon" href="./images/icon-20.png" type="image/x-icon">
+    <meta name="description"
+        content="Spazza non è altro che un calendario settimanale personalizzabile, dotato di un piccolo archivio per guidare l’utente alla giusta differenziazione, con un’estetica minimale.">
     <title>SPAZZA</title>
 </head>
 
@@ -24,14 +25,14 @@
         <div class="toggle-dark" onclick="darkMode()">
             <div class="dark-switch concave">
                 <div class="dark-switch-toggle convex">
-                    <i class="fa-regular fa-sun"></i>
-                    <i class="fa-regular fa-moon"></i>
+                    <img src="./images/sun.svg" alt="sun-icon" class="icon sun">
+                    <img src="./images/moon.svg" alt="moon-icon" class="icon moon">
                 </div>
             </div>
         </div>
 
         <div class="search-btn convex button" onclick="displaySearchPanel()">
-            <i class="fa-solid fa-magnifying-glass search-btn"></i>
+            <img src="./images/search.svg" alt="search-icon" class="icon search">
         </div>
     </div>
     <div class="display">
@@ -55,7 +56,7 @@
 
                 <div class="bar">
                     <div class="button convex back" onclick="hidePanel(`domEditPanel`)">
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <img src="./images/back.svg" alt="back-icon" class="icon back">
                     </div>
                     <h2 class="title">Modifica</h2>
                 </div>
@@ -101,7 +102,8 @@
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`dom`, `domTrashes`, `domEditPanel`)">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <img src="./images/edit.svg" alt="edit-icon" class="icon edit">
+
             </div>
         </label>
 
@@ -112,7 +114,7 @@
 
                 <div class="bar">
                     <div class="button convex back" onclick="hidePanel(`lunEditPanel`)">
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <img src="./images/back.svg" alt="back-icon" class="icon back">
                     </div>
                     <h2 class="title">Modifica</h2>
                 </div>
@@ -160,7 +162,7 @@
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`lun`, `lunTrashes`, `lunEditPanel`)">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <img src="./images/edit.svg" alt="edit-icon" class="icon edit">
             </div>
         </label>
 
@@ -170,7 +172,7 @@
 
                 <div class="bar">
                     <div class="button convex back" onclick="hidePanel(`marEditPanel`)">
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <img src="./images/back.svg" alt="back-icon" class="icon back">
                     </div>
                     <h2 class="title">Modifica</h2>
                 </div>
@@ -217,7 +219,7 @@
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`mar`, `marTrashes`, `marEditPanel`)">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <img src="./images/edit.svg" alt="edit-icon" class="icon edit">
             </div>
         </label>
 
@@ -226,7 +228,7 @@
             <div class="merEditPanel edit-panel invisible">
                 <div class="bar">
                     <div class="button convex back" onclick="hidePanel(`merEditPanel`)">
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <img src="./images/back.svg" alt="back-icon" class="icon back">
                     </div>
                     <h2 class="title">Modifica</h2>
                 </div>
@@ -273,7 +275,7 @@
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`mer`, `merTrashes`, `merEditPanel`)">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <img src="./images/edit.svg" alt="edit-icon" class="icon edit">
             </div>
         </label>
 
@@ -283,7 +285,7 @@
 
                 <div class="bar">
                     <div class="button convex back" onclick="hidePanel(`gioEditPanel`)">
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <img src="./images/back.svg" alt="back-icon" class="icon back">
                     </div>
                     <h2 class="title">Modifica</h2>
                 </div>
@@ -331,7 +333,7 @@
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`gio`, `gioTrashes`, `gioEditPanel`)">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <img src="./images/edit.svg" alt="edit-icon" class="icon edit">
             </div>
         </label>
 
@@ -341,7 +343,7 @@
 
                 <div class="bar">
                     <div class="button convex back" onclick="hidePanel(`venEditPanel`)">
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <img src="./images/back.svg" alt="back-icon" class="icon back">
                     </div>
                     <h2 class="title">Modifica</h2>
                 </div>
@@ -389,7 +391,7 @@
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`ven`, `venTrashes`, `venEditPanel`)">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <img src="./images/edit.svg" alt="edit-icon" class="icon edit">
             </div>
         </label>
 
@@ -399,7 +401,7 @@
 
                 <div class="bar">
                     <div class="button convex back" onclick="hidePanel(`sabEditPanel`)">
-                        <i class="fa-solid fa-arrow-left"></i>
+                        <img src="./images/back.svg" alt="back-icon" class="icon back">
                     </div>
                     <h2 class="title">Modifica</h2>
                 </div>
@@ -447,7 +449,7 @@
             </div>
 
             <div class="submit button convex" onclick="displayTrash(`sab`, `sabTrashes`, `sabEditPanel`)">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <img src="./images/edit.svg" alt="edit-icon" class="icon edit">
             </div>
         </label>
     </div>
@@ -458,7 +460,7 @@
     <div class="search-panel invisible">
         <div class="bar">
             <div class="button convex back" onclick="hidePanel(`search-panel`)">
-                <i class="fa-solid fa-arrow-left"></i>
+                <img src="./images/back.svg" alt="back-icon" class="icon back">
             </div>
 
             <h2 class="title">Cerca rifiuti</h2>
@@ -474,7 +476,7 @@
                 <div id="lista-umido" class="infoList convex container" onclick="showInfo('lista-umido')">
                     <h4 class="sm-thin">Umido</h4>
                     <span class="invisible-text">
-                        Sscarti e avanzi di cucina (sia cotti che crudi, purché freddi); bucce e resti di frutta; scarti
+                        Scarti e avanzi di cucina (sia cotti che crudi, purché freddi); bucce e resti di frutta; scarti
                         di verdura; gusci di frutta secca; avanzi di carne e ossi; avanzi di pesce e lische; resti di
                         cibo secco degli animali domestici; gusci di uova; filtri di tè, camomilla, tisane e fondi di
                         caffè; piccole quantità di fiori recisi; tovaglioli bianchi (non colorati) sporchi di alimenti.
@@ -532,33 +534,33 @@
 
 
     <div class="loading">
-        <h1 class="title">Spazza &#x267D;</h1>
+        <h1 class="title">Spazza!</h1>
 
     </div>
 
     <script>
         //sw
 
-const registerServiceWorker = async () => {
-  if ("serviceWorker" in navigator) {
-    try {
-      const registration = await navigator.serviceWorker.register("./sw.js", {
-        scope: "./",
-      });
-      if (registration.installing) {
-        console.log("Service worker installing");
-      } else if (registration.waiting) {
-        console.log("Service worker installed");
-      } else if (registration.active) {
-        console.log("Service worker active");
-      }
-    } catch (error) {
-      console.error(`Registration failed with ${error}`);
-    }
-  }
-};
+        const registerServiceWorker = async () => {
+            if ("serviceWorker" in navigator) {
+                try {
+                    const registration = await navigator.serviceWorker.register("./sw.js", {
+                        scope: "./",
+                    });
+                    if (registration.installing) {
+                        console.log("Service worker installing");
+                    } else if (registration.waiting) {
+                        console.log("Service worker installed");
+                    } else if (registration.active) {
+                        console.log("Service worker active");
+                    }
+                } catch (error) {
+                    console.error(`Registration failed with ${error}`);
+                }
+            }
+        };
 
-registerServiceWorker();
+        registerServiceWorker();
 
 
     </script>
@@ -574,12 +576,13 @@ registerServiceWorker();
             trashCount.push('Libero')
             const bin = document.createElement('img');
             bin.classList.add('tmp');
+            bin.setAttribute('alt', 'bidone di oggi');
             trashbin.textContent = '';
 
             for (let count of trashCount) {
                 // console.log(count.toLowerCase())
                 trashbin.appendChild(bin.cloneNode(true))
-                bin.src = 'images/' + count.toLowerCase() + '.png';
+                bin.src = 'images/' + count.toLowerCase() + '.webp';
             }
 
             const bins = document.querySelectorAll('.tmp')
@@ -675,7 +678,6 @@ registerServiceWorker();
             document.querySelector('.search-panel').classList.toggle('visible');
         }
 
-
         //div to style checkboxes
         const customBoxes = document.createElement('span');
         customBoxes.classList.add('customBoxes', 'concave');
@@ -686,8 +688,6 @@ registerServiceWorker();
                 customBoxes.style.background = '#000'
             }
         }
-
-
 
     </script>
 
